@@ -1,0 +1,6 @@
+framework module Pods_FirebasePerformanceMonitoring {
+  umbrella header "Pods-FirebasePerformanceMonitoring-umbrella.h"
+
+  export *
+  module * { export * }
+}
