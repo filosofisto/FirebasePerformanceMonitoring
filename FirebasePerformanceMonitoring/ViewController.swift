@@ -27,9 +27,6 @@ class ViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "simpleScreenTransition" {
-            activityIndicator.startAnimating()
-            Utils.waitFor(max: 4)
-            activityIndicator.stopAnimating()
             return true
         }
         
@@ -42,6 +39,7 @@ class ViewController: UIViewController {
         
         DispatchQueue.global(qos: .background).async {
             let trace = Performance.startTrace(name: "custom_trace")
+            trace?.incrementMetric("custom_trace", by: 1)
             Utils.waitFor(max: 4)
             trace?.stop()
             
@@ -55,13 +53,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func httpRequestPressed(_ sender: UIButton) {
-        AF.request("https://caixaseguradora-mobile-api.herokuapp.com/category_properties").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
+        var proxyConfiguration = [NSObject: AnyObject]()
+        proxyConfiguration[kCFNetworkProxiesHTTPProxy] = "webproxy.rootbrasil.intranet" as AnyObject?
+        proxyConfiguration[kCFNetworkProxiesHTTPPort] = "80" as AnyObject?
+        proxyConfiguration[kCFNetworkProxiesHTTPEnable] = 1 as AnyObject?
+        proxyConfiguration[kCFProxyUsernameKey] = "ter81646" as AnyObject?
+        proxyConfiguration[kCFProxyPasswordKey] = "********" as AnyObject?
+        
+        let cfg = Alamofire.SessionManager.default.session.configuration
+        cfg.connectionProxyDictionary = proxyConfiguration
+        
+        let request = Alamofire.request("https://caixaseguradora-mobile-api.herokuapp.com/category_properties")
+        request.validate()
+        request.response { request in
+            if let error = request.error {
+                print("Error: \(error.localizedDescription)")
             }
         }
     }

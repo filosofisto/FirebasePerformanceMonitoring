@@ -110,7 +110,7 @@
         <!--Simple Screen Transition View Controller-->
         <scene sceneID="NGy-Oc-7Zg">
             <objects>
-                <viewController id="gMe-8r-cfn" userLabel="Simple Screen Transition View Controller" sceneMemberID="viewController">
+                <viewController id="gMe-8r-cfn" userLabel="Simple Screen Transition View Controller" customClass="SimpleScreenTransitionViewController" customModule="FirebasePerformanceMonitoring" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6a3-1Q-0mz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,13 +119,16 @@
                                 <rect key="frame" x="0.0" y="273" width="414" height="589"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Firebase Console to see performance insights" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3K-Jw-MLb">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="360.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="260" id="lBc-gh-LXd"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDI-qp-3Rm">
-                                        <rect key="frame" x="0.0" y="362.5" width="414" height="226.5"/>
+                                        <rect key="frame" x="0.0" y="262" width="414" height="327"/>
                                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="&lt; Back"/>
@@ -135,7 +138,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Z3K-Jw-MLb" firstAttribute="leading" secondItem="Obo-S9-aJK" secondAttribute="leading" id="6Vk-bc-15h"/>
+                                    <constraint firstItem="Z3K-Jw-MLb" firstAttribute="top" secondItem="Obo-S9-aJK" secondAttribute="top" id="KMo-rA-SkE"/>
                                     <constraint firstItem="Z3K-Jw-MLb" firstAttribute="centerX" secondItem="Obo-S9-aJK" secondAttribute="centerX" id="bLF-2O-pfz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z3K-Jw-MLb" secondAttribute="trailing" id="mH2-NO-BrZ"/>
+                                    <constraint firstItem="Z3K-Jw-MLb" firstAttribute="centerX" secondItem="Obo-S9-aJK" secondAttribute="centerX" id="qnp-8H-T1K"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NED-1W-zCz" userLabel="Top Container">

@@ -14,6 +14,7 @@
 		A02D89CC22D4FE3A0007EBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02D89CA22D4FE3A0007EBF1 /* LaunchScreen.storyboard */; };
 		A02D89D422D5048E0007EBF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A02D89D322D5048E0007EBF1 /* GoogleService-Info.plist */; };
 		A02D89DB22D5181E0007EBF1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02D89DA22D5181E0007EBF1 /* Utils.swift */; };
+		A02D89DF22D612910007EBF1 /* SimpleScreenTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02D89DE22D612910007EBF1 /* SimpleScreenTransitionViewController.swift */; };
 		D14BE87463150412187258CB /* Pods_FirebasePerformanceMonitoring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2E8F0084CD863548CD11DD /* Pods_FirebasePerformanceMonitoring.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		A02D89D322D5048E0007EBF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A02D89DA22D5181E0007EBF1 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A02D89DC22D528B30007EBF1 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Pods/Alamofire/Source/Alamofire.swift; sourceTree = "<group>"; };
+		A02D89DE22D612910007EBF1 /* SimpleScreenTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScreenTransitionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				A02D89C122D4FE390007EBF1 /* AppDelegate.swift */,
 				A02D89C322D4FE390007EBF1 /* ViewController.swift */,
+				A02D89DE22D612910007EBF1 /* SimpleScreenTransitionViewController.swift */,
 				A02D89C522D4FE390007EBF1 /* Main.storyboard */,
 				A02D89C822D4FE3A0007EBF1 /* Assets.xcassets */,
 				A02D89CA22D4FE3A0007EBF1 /* LaunchScreen.storyboard */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A02D89C422D4FE390007EBF1 /* ViewController.swift in Sources */,
+				A02D89DF22D612910007EBF1 /* SimpleScreenTransitionViewController.swift in Sources */,
 				A02D89C222D4FE390007EBF1 /* AppDelegate.swift in Sources */,
 				A02D89DB22D5181E0007EBF1 /* Utils.swift in Sources */,
 			);
